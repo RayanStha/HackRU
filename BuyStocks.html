@@ -11,6 +11,21 @@
             font-family: verdana;
         }
 
+        .nav{
+            border:1px solid #ccc;
+            border-width:1px 0;
+            list-style:none;
+            margin:0;
+            padding:0;
+            text-align:center;
+
+        }
+
+        .nav li {
+            text-align: center;
+            display: inline-block;
+        }
+
         p {
             font-family: verdana;
             font-size: 20px;
@@ -126,7 +141,17 @@
 
     </script>
 </head>
+<h1>Major League Musicians</h1>
+
+
 <body>
+    <ul class="nav">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#news">Buy</a></li>
+        <li><a href="#contact">Sell</a></li>
+        <li><a href="#about">Other Artists Statistics</a></li>
+    </ul>
+
 <div class="dropdown">
     <button onclick="myFunction()" class="dropbtn">Dropdown</button>
     <div id="myDropdown" class="dropdown-content">
@@ -137,6 +162,13 @@
         /* Populate with artist names*/
     </div>
 </div>
+
+<div class = "buy">
+    Input Amount: <input id="amt">
+    <button onclick="" class="buybtn">Buy</button>
+</div>
+
+
 
 </body>
 
