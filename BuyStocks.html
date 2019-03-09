@@ -136,6 +136,20 @@
             }
         }
 
+        function buyStocks( artist, inputamt ){
+            /* update user's stocks and money*/
+            usrMoney = 0;
+            stockprice = priceList[artist]; //get stockPrice - needs fixed
+            if (inputAmt< usrMoney){
+                alert("You do not have enough enough money to ");
+            else{
+                shareNum = stockPrice /
+                alert("You have bought $"+inputAmt+" worth of stock in "+artist+". This is equivalent to "+shareNum+" shares.");
+                //subtract inputAmt from usrMoney and add shareNum to the amount of shares that user has
+                }
+            }
+        }
+
         // Initialize Firebase
         var config = {
             apiKey: "AIzaSyDCMR01rqNEk_TKtMCAiPqhfV1rf-U2nxs",
@@ -173,7 +187,7 @@
 
 <div class = "buy">
     Input Amount: <input id="amt">
-    <button onclick="" class="buybtn">Buy</button>
+    <button onclick="buyStocks" class="buybtn">Buy</button>
 </div>
 
 
