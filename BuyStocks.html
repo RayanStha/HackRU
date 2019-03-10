@@ -1,35 +1,9 @@
 <html>
-<body>
-<ul class="nav">
-    <li><a href="#linkForHomepage">Home</a></li>
-    <li><a href="#linkForBuyPage">Buy</a></li>
-    <li><a href="#linkForSellPage">Sell</a></li>
-    <li><a href="#linkForStatPage">Other Artists Statistics</a></li>
-</ul>
 
-<div class="dropdown">
-    <button onclick="myFunction()" class="dropbtn">Dropdown</button>
-    <div id="myDropdown" class="dropdown-content">
-        <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
-        <!--
-        <a href="#about">About</a>
-        <a href="#base">Base</a>
-        <a href="#blog">Blog</a>
-        //Populate with artist names
-        -->
-    </div>
-</div>
-
-<div class = "buy">
-    Input Amount: <input id="amt">
-    <button onclick="buyStocks" class="buybtn">Buy</button>
-</div>
-
-
-
-</body>
 <head>
+
     <title>Major League Musicians</title>
+
     <style>
         body {
             background-color: white;
@@ -63,12 +37,12 @@
             background-color: lightblue;
             border: 2px solid black;
             color: black;
-            padding: 15px 32px;
+            padding: 10px 24px;
             text-align: center;
             text-decoration: none;
             display: inline-block;
             font-family: verdana;
-            font-size: 24px;
+            font-size: 18px;
             margin: 4px 2px;
             cursor: pointer;
         }
@@ -136,10 +110,11 @@
         /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
         .show {display:block;}
     </style>
+
     <script>
-        var artists = ["Taylor Swift", "Joe Rogan"]
-        var followers = [123, 4123]
-        var popularity = [78, 12]
+        var artists = ["Taylor Swift", "Joe Rogan"];
+        var followers = [123, 4123];
+        var popularity = [78, 12];
 
         var select = document.getElementById("myDropdown");
         for(var i = 0; i < artists.length; i++) {
@@ -196,7 +171,33 @@
     </script>
 </head>
 
+<body>
 
 <h1>Major League Musicians</h1>
+<ul class="nav">
+    <li><a href="#linkForHomepage">Home</a></li>
+    <li><a href="#linkForBuyPage">Buy</a></li>
+    <li><a href="#linkForSellPage">Sell</a></li>
+    <li><a href="#linkForStatPage">Other Artists Statistics</a></li>
+</ul>
+<div class="dropdown">
+    <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+    <div id="myDropdown" class="dropdown-content">
+        <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+        <!--
+        <a href="#about">About</a>
+        <a href="#base">Base</a>
+        <a href="#blog">Blog</a>
+        //Populate with artist names
+        -->
+    </div>
+</div>
+
+
+Input Amount: $<input type="text" id="amt" >
+<input type="button" class="button" onclick="buyStocks()" value="Buy">
+
+
+</body>
 
 </html>
