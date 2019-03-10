@@ -116,13 +116,13 @@
         var followers = [123, 4123];
         var popularity = [78, 12];
 
-        var select = document.getElementById("myDropdown");
         for(var i = 0; i < artists.length; i++) {
             var x = artists[i];
             var e = document.createElement("OPTION");
-            e.textContent = x;
-            e.value = x;
-            select.appendChild(e);
+            e.setAttribute("value",x);
+            var t = document.createTextNode(x);
+            e.appendChild(t);
+            document.getElementById("myDropdown").appendChild(e);
         }
         function myFunction() {
             document.getElementById("myDropdown").classList.toggle("show");
