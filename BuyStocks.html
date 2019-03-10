@@ -1,4 +1,33 @@
 <html>
+<body>
+<ul class="nav">
+    <li><a href="#linkForHomepage">Home</a></li>
+    <li><a href="#linkForBuyPage">Buy</a></li>
+    <li><a href="#linkForSellPage">Sell</a></li>
+    <li><a href="#linkForStatPage">Other Artists Statistics</a></li>
+</ul>
+
+<div class="dropdown">
+    <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+    <div id="myDropdown" class="dropdown-content">
+        <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+        <!--
+        <a href="#about">About</a>
+        <a href="#base">Base</a>
+        <a href="#blog">Blog</a>
+        //Populate with artist names
+        -->
+    </div>
+</div>
+
+<div class = "buy">
+    Input Amount: <input id="amt">
+    <button onclick="buyStocks" class="buybtn">Buy</button>
+</div>
+
+
+
+</body>
 <head>
     <title>Major League Musicians</title>
     <style>
@@ -113,8 +142,12 @@
         var popularity = [78, 12]
 
         var select = document.getElementById("myDropdown");
-        for(int i = 0; i < artists.length; ++i) {
-            select.options[select.options.length] = new Option(artists[i], i);
+        for(var i = 0; i < artists.length; i++) {
+            var x = artists[i];
+            var e = document.createElement("option");
+            e.textContent = x;
+            e.value = x;
+            select.appendChild(e);
         }
         function myFunction() {
             document.getElementById("myDropdown").classList.toggle("show");
@@ -140,13 +173,12 @@
             /* update user's stocks and money*/
             usrMoney = 0;
             stockprice = priceList[artist]; //get stockPrice - needs fixed
-            if (inputAmt< usrMoney){
+            if (inputAmt< usrMoney) {
                 alert("You do not have enough enough money to ");
-            else{
+            }else{
                 shareNum = stockPrice /
                 alert("You have bought $"+inputAmt+" worth of stock in "+artist+". This is equivalent to "+shareNum+" shares.");
                 //subtract inputAmt from usrMoney and add shareNum to the amount of shares that user has
-                }
             }
         }
 
@@ -163,35 +195,8 @@
 
     </script>
 </head>
+
+
 <h1>Major League Musicians</h1>
-
-
-<body>
-    <ul class="nav">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#news">Buy</a></li>
-        <li><a href="#contact">Sell</a></li>
-        <li><a href="#about">Other Artists Statistics</a></li>
-    </ul>
-
-<div class="dropdown">
-    <button onclick="myFunction()" class="dropbtn">Dropdown</button>
-    <div id="myDropdown" class="dropdown-content">
-        <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
-        <a href="#about">About</a>
-        <a href="#base">Base</a>
-        <a href="#blog">Blog</a>
-    </div>
-</div>
-/* Populate with artist names*/
-
-<div class = "buy">
-    Input Amount: <input id="amt">
-    <button onclick="buyStocks" class="buybtn">Buy</button>
-</div>
-
-
-
-</body>
 
 </html>
